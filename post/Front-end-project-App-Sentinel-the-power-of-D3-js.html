@@ -1,0 +1,748 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="-dev -data," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Take a look at App Sentinel BackgroundAll the mobile companies understand the performance of their apps are critical to their success. The growth hackers care a lot about user activities, the marketee">
+<meta name="keywords" content="-dev -data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Front-end project App Sentinel - the power of D3.js">
+<meta property="og:url" content="http://yoursite./post/Front-end-project-App-Sentinel-the-power-of-D3-js.html">
+<meta property="og:site_name" content="Kevin&#39;s Blog">
+<meta property="og:description" content="Take a look at App Sentinel BackgroundAll the mobile companies understand the performance of their apps are critical to their success. The growth hackers care a lot about user activities, the marketee">
+<meta property="og:image" content="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/desktop1.png">
+<meta property="og:image" content="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/desktop2.png">
+<meta property="og:image" content="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/mobile.png">
+<meta property="og:updated_time" content="2017-08-04T19:30:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Front-end project App Sentinel - the power of D3.js">
+<meta name="twitter:description" content="Take a look at App Sentinel BackgroundAll the mobile companies understand the performance of their apps are critical to their success. The growth hackers care a lot about user activities, the marketee">
+<meta name="twitter:image" content="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/desktop1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite./post/Front-end-project-App-Sentinel-the-power-of-D3-js.html"/>
+
+
+
+
+
+  <title>Front-end project App Sentinel - the power of D3.js | Kevin's Blog</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Kevin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite./post/Front-end-project-App-Sentinel-the-power-of-D3-js.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yang Shen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/shibainu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kevin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Front-end project App Sentinel - the power of D3.js</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-04T12:17:06-07:00">
+                2017-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://kevinshenyang07.github.io/AppSentinel/" target="_blank" rel="external">Take a look at App Sentinel</a></p>
+<h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>All the mobile companies understand the performance of their apps are critical to their success. The growth hackers care a lot about user activities, the marketeers care a lot about cost/downloads efficiency, and the engineers care a lot about high availability and low latency.</p>
+<p>App Sentinel is a dashboard that is designed to visualize the most important metrics for one of those domains. In this case, I choose growth hacking - the topic I’m more familiar with.</p>
+<p>First four visualizations: </p>
+<p><img src="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/desktop1.png" alt="desktop1"></p>
+<a id="more"></a>
+<p>Fifth and sixth visualizations:</p>
+<p><img src="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/desktop2.png" alt="desktop2"></p>
+<p>Also support mobile:</p>
+<p><img src="https://res.cloudinary.com/kevinsy07/image/upload/v1501874541/screenshots/mobile.png" height="400"></p>
+<h3 id="Features-and-Implementation"><a href="#Features-and-Implementation" class="headerlink" title="Features and Implementation"></a>Features and Implementation</h3><p>App Sentinel is a front-end project, but it’s designed to be able to be plugged into a live data feed from back-end easily. All visualzations ingest JSON data and have no dependencies on the back-end. To emulate that process it uses randomly generated data.</p>
+<p>Each visualzation is designed to present different levels of details interactively. The goal is to provide as much as information the user would need, but at the same time keep the visualization clean and organized.</p>
+<h4 id="Visualization-for-User-Engagement"><a href="#Visualization-for-User-Engagement" class="headerlink" title="Visualization for User Engagement"></a>Visualization for User Engagement</h4><p>This is the most challenging one, and also most representative of D3’s features. To be able to take in different number of data points and dynamically adjust the area and x axis. By using D3’s enter-join-exit mechanism, one can declare the data join pattern first then push the data to the chart later. </p>
+<p>Below is a code snippet for dynamically updating toolips points:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// data enter and join</span></div><div class="line">points.selectAll(<span class="string">".usertipPoints"</span>)</div><div class="line">      .data(ddata)</div><div class="line">      .enter().append(<span class="string">"circle"</span>)</div><div class="line">      .attr(<span class="string">"class"</span>, <span class="string">"usertipPoints"</span>)</div><div class="line">      .attr(<span class="string">"cx"</span>, d =&gt; x(d.time))</div><div class="line">      .attr(<span class="string">"cy"</span>, d =&gt; y(d[option]))</div><div class="line">      .attr(<span class="string">"r"</span>, <span class="string">"6px"</span>);</div><div class="line"></div><div class="line"><span class="comment">// data exit</span></div><div class="line">points.selectAll(<span class="string">".usertipPoints"</span>)</div><div class="line">      .data(ddata)</div><div class="line">      .exit()</div><div class="line">      .transition()</div><div class="line">      .duration(<span class="number">200</span>)</div><div class="line">      .remove();</div></pre></td></tr></table></figure>
+<h4 id="Visualization-for-Installs-By-Channels"><a href="#Visualization-for-Installs-By-Channels" class="headerlink" title="Visualization for Installs By Channels"></a>Visualization for Installs By Channels</h4><p>This one is an attempt to create a dashboard with charts being aware of other charts’ update. In this case I used <code>createView()</code> as a closure for all the chart-creating functions, but the data flow can be better managed in flux patterns.</p>
+<p>To make the two charts interacting with each other, I wrote a update method for each chart that can either update or reset based on the input, below is the code snippet to illustrate this pattern:</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mouseover</span>(<span class="params">d</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> singleChannelData = data.filter(<span class="function"><span class="params">s</span> =&gt;</span> s.channel === d[<span class="number">0</span>])[<span class="number">0</span>];</div><div class="line">  <span class="comment">// for each single channel, get installs by platform</span></div><div class="line">  <span class="keyword">const</span> nd = d3.keys(singleChannelData.platform).map(</div><div class="line">    <span class="function"><span class="params">s</span> =&gt;</span> (&#123;<span class="attr">type</span>:s, <span class="attr">platform</span>: singleChannelData.platform[s]&#125;)</div><div class="line">  );</div><div class="line">  </div><div class="line">  pieChart.update(nd);</div><div class="line">  legend.update(nd);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mouseout</span>(<span class="params">d</span>) </span>&#123;</div><div class="line">  <span class="comment">// reset the pie-chart and legend.</span></div><div class="line">  pieChart.update(totalByPlatform);</div><div class="line">  legend.update(totalByPlatform);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Architecture-and-Technologies"><a href="#Architecture-and-Technologies" class="headerlink" title="Architecture and Technologies"></a>Architecture and Technologies</h3><p>This project will be implemented with the following technologies:</p>
+<ul>
+<li>Vanilla JavaScript combined with <code>jQuery</code> for basic DOM manipulation and event handling.</li>
+<li><code>D3.js</code> for constructing each visualization component.</li>
+<li><code>Bootstrap</code> for making this app responsive.</li>
+</ul>
+<p>File structure:</p>
+<p>– docs</p>
+<p>– lib (including main.js and other components)</p>
+<p>– application.css</p>
+<p>– index.html</p>
+<h3 id="Bonus-features"><a href="#Bonus-features" class="headerlink" title="Bonus features"></a>Bonus features</h3><p>There are many directions this dashboard app could eventually go. Some of the useful features would be:</p>
+<ul>
+<li>[ ] Offer an “add” button to let users create a chart themselves.</li>
+<li>[ ] Charts are draggable.</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dev-data/" rel="tag"># -dev -data</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/Full-stack-project-Packsy-is-now-online-🎉.html" rel="next" title="Full-stack project Packsy is now online! 🎉">
+                <i class="fa fa-chevron-left"></i> Full-stack project Packsy is now online! 🎉
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/shibainu.jpg"
+               alt="Yang Shen" />
+          <p class="site-author-name" itemprop="name">Yang Shen</p>
+           
+              <p class="site-description motion-element" itemprop="description">以理驭气，戒急用忍</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/kevinshenyang07/" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kevinshenyang07/notes-and-projects" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-and-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Features and Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Visualization-for-User-Engagement"><span class="nav-number">2.1.</span> <span class="nav-text">Visualization for User Engagement</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Visualization-for-Installs-By-Channels"><span class="nav-number">2.2.</span> <span class="nav-text">Visualization for Installs By Channels</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture-and-Technologies"><span class="nav-number">3.</span> <span class="nav-text">Architecture and Technologies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonus-features"><span class="nav-number">4.</span> <span class="nav-text">Bonus features</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yang Shen</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
